@@ -1,11 +1,7 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.Scanner;
 
-public class Games {
-
-
+public class Gaming {
     public void guessingGame(int target) {
         System.out.println("Think of a number between 1 and 100, and I'll  guess it!");
         System.out.println("Answer with 'higher', 'lower', or 'correct'.");
@@ -75,4 +71,7 @@ public class Games {
         }
         return ret;
     }
+}
+
+public void main() {
 }
