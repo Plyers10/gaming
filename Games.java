@@ -64,7 +64,7 @@ public class Gaming {
         }
         scanner.close();
     }
-    public String charToString(char[] arr) {
+    public static String charToString(char[] arr) {
         String ret = "";
         for (int i = 0; i < arr.length; i++) {
             ret += arr[i];
