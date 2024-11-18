@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Gaming {
-    public static void guessingGame(int target) {
+    public static void guessingGame() {
         System.out.println("Think of a number between 1 and 100, and I'll  guess it!");
         System.out.println("Answer with 'higher', 'lower', or 'correct'.");
         Scanner scanner = new Scanner(System.in);
@@ -38,7 +38,8 @@ public class Gaming {
             System.out.println(charToString(currWord));
             System.out.println("Attempts left: " + attempts);
             System.out.print("Guess a letter (lowercase): ");
-            char guess = scanner.next().charAt(0);
+            String Stringguess = scanner.nextLine();
+            char guess = Stringguess.charAt(0);
             if (guessedLetters.contains(guess)) {
                 System.out.println("You already guessed that letter!");
                 continue;
@@ -84,8 +85,8 @@ public class Gaming {
             for (int turn = 0; turn < 9 && !gameWon; turn++) {
                 printBoard(board);
                 System.out.println("Player " + currentPlayer + ", enter your move (row and column: 1 1 for top-left): ");
-                int row = scanner.nextInt() - 1;
-                int col = scanner.nextInt() - 1;
+                int row = scanner.nextInt() -1;
+                int col = scanner.nextInt() -1;
 
                 if (board[row][col] != ' ') {
                     System.out.println("Invalid move! Try again.");
@@ -140,6 +141,8 @@ public class Gaming {
     }
 
 public void main() {
-
+//Gaming.guessingGame();
+//Gaming.hangman();
+Gaming.ticTacToe();
 
 }
