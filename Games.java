@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Gaming {
-    public void guessingGame(int target) {
+    public static void guessingGame(int target) {
         System.out.println("Think of a number between 1 and 100, and I'll  guess it!");
         System.out.println("Answer with 'higher', 'lower', or 'correct'.");
         Scanner scanner = new Scanner(System.in);
@@ -24,7 +24,7 @@ public class Gaming {
         }
         scanner.close();
     }
-    public void hangman(){
+    public static void hangman(){
         String[] wordList = {"banker", "teller", "hanger", "airplane", "peashooter"};
         int attempts = 6;
         Scanner scanner = new Scanner(System.in);
@@ -71,7 +71,7 @@ public class Gaming {
         }
         return ret;
     }
-    public void ticTacToe(){
+    public static void ticTacToe(){
             char[][] board = {
                     {' ', ' ', ' '},
                     {' ', ' ', ' '},
