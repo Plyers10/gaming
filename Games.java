@@ -71,6 +71,78 @@ public class Gaming {
         }
         return ret;
     }
+    public class TicTacToe {
+        public static void main(String[] args) {
+            char[][] board = {
+                    {' ', ' ', ' '},
+                    {' ', ' ', ' '},
+                    {' ', ' ', ' '}};
+
+            Scanner scanner = new Scanner(System.in);
+            char currentPlayer = 'X';
+            boolean gameWon = false;
+
+            for (int turn = 0; turn < 9 && !gameWon; turn++) {
+                printBoard(board);
+                System.out.println("Player " + currentPlayer + ", enter your move (row and column: 1 1 for top-left): ");
+                int row = scanner.nextInt() - 1;
+                int col = scanner.nextInt() - 1;
+
+                if (board[row][col] != ' ') {
+                    System.out.println("Invalid move! Try again.");
+                    turn--;
+                    continue;
+                }
+
+                board[row][col] = currentPlayer;
+                gameWon = checkWin(board, currentPlayer);
+
+                if (!gameWon) {
+                    if(currentPlayer == 'X'){
+                        currentPlayer = 'O';
+                    }else{
+                        currentPlayer = 'X';
+                    }
+                }else {
+                    break;
+                }
+            }
+
+            printBoard(board);
+
+            if (gameWon) {
+                System.out.println("Player " + currentPlayer + " wins!");
+            } else {
+                System.out.println("It's a draw!");
+            }
+
+            scanner.close();
+        }
+
+        private static void printBoard(char[][] board) {
+            for (char[] row : board) {
+                for (char cell : row) {
+                    System.out.print("|" + cell);
+                }
+                System.out.println("|");
+            }
+        }
+
+        private static boolean checkWin(char[][] board, char player) {
+            for (int i = 0; i < 3; i++) {
+                if (board[i][0] == player && board[i][1] == player && board[i][2] == player) return true;
+                if (board[0][i] == player && board[1][i] == player && board[2][i] == player) return true;
+            }
+            if (board[0][0] == player && board[1][1] == player && board[2][2] == player) return true;
+            if (board[0][2] == player && board[1][1] == player && board[2][0] == player) return true;
+
+            return false;
+        }
+    }
+
+
+
+
 }
 
 public void main() {
