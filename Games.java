@@ -71,8 +71,7 @@ public class Gaming {
         }
         return ret;
     }
-    public class TicTacToe {
-        public static void main(String[] args) {
+    public void ticTacToe(){
             char[][] board = {
                     {' ', ' ', ' '},
                     {' ', ' ', ' '},
@@ -146,4 +145,6 @@ public class Gaming {
 }
 
 public void main() {
+    
+
 }
